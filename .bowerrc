@@ -1,0 +1,9 @@
+{
+  "directory": "www/bower_components/",
+  "analytics": true,
+  "storage": {
+    "cache" : ".bower/cache",
+    "registry" : ".bower/registry",
+    "tmp": ".bower/tmp"
+  }
+}

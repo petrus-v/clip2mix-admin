@@ -1,0 +1,25 @@
+{
+  "name": "clip2mix-admin",
+  "private": true,
+  "version": "0.0.1",
+  "authors": [
+    "Pierre Verkest <pierreverkest84@gmail.com>"
+  ],
+  "description": "Clip2mix Adminsistration",
+  "main": "www/index.html",
+  "keywords": [
+    "clip"
+  ],
+  "license": "A-GPL",
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.8-preview",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#master",
+    "flatiron-director": "PolymerLabs/flatiron-director#master"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#master"
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin clip2mix</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="elements/apps-main/apps-main.html">
+  </head>
+  <body style="background-color: #526E9C;">
+    <img src="static/img/logo.png"/>
+    <p id="spinner" style="color:#ffffff">Loading admin clip2mix...</p>
+    <div unresolved>
+      <apps-main fancy>
+        <h2>hello apps</h2>
+      </apps-main>
+    </div>
+     <script>
+        document.querySelector('img').addEventListener('click', function() {
+          var apps = document.querySelector('apps-main');
+          alert(apps.sayHello('Hallo!'));
+          document.querySelector('#spinner').style.display = 'none';
+        });
+      </script>
+  </body>
+</html>
