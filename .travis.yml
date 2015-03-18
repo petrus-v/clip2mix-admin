@@ -1,0 +1,9 @@
+language: python
+python:
+  - 3.4
+install:
+  - python bootstrap.py -c buildout.dev.cfg
+  - bin/buildout -c buildout.dev.cfg
+  - bin/bower update
+script:
+  - bin/wct
