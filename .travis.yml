@@ -6,4 +6,5 @@ install:
   - bin/buildout -c buildout.dev.cfg
   - bin/bower update
 script:
-  - bin/wct --sauce-username=$SAUCE_USERNAME --sauce-access-key=$SAUCE_ACCESS_KEY
+  - bin/wct --plugin wct-sauce --sauce-username=$SAUCE_USERNAME \
+            --sauce-access-key=$SAUCE_ACCESS_KEY -s default
