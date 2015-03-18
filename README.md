@@ -2,6 +2,8 @@
 Clip2mix Administration
 =======================
 
+[![Build Status](https://travis-ci.org/petrus-v/clip2mix-admin.svg)](https://travis-ci.org/petrus-v/clip2mix-admin)
+
 This expect to be the project to administrate [clip2mix](clip2mix.com).
 
 This project contains all needs to install dependencies on a fresh server.
