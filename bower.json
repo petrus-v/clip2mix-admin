@@ -16,10 +16,12 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#0.8-preview",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#master",
-    "flatiron-director": "PolymerLabs/flatiron-director#master"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#master"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#master"
+  },
+  "resolutions": {
+    "polymer": "0.8-preview"
   }
 }
