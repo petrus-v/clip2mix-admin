@@ -46,10 +46,10 @@ How to run tests
 You have to use `buildout.dev.cfg` at buildout step to install dev dependencies
 and run `bower` without `-p` parameter to install dev dependencies.
 
-then launch tests using *web-component-tester*:
+then launch tests localy using *web-component-tester*:
 
 ```
-bin/wct
+bin/wct --skip-plugin sauce
 ```
 
 License

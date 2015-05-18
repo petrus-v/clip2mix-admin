@@ -15,13 +15,14 @@
     "bower_components"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#0.8-preview",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#master"
+    "polymer": "Polymer/polymer#master",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#master",
+    "core-list": "Polymer/core-list#master"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#master"
   },
   "resolutions": {
-    "polymer": "0.8-preview"
+    "polymer": "master"
   }
 }
