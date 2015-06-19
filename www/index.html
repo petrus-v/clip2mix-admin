@@ -21,6 +21,37 @@
           alert(apps.sayHello('Hallo!'));
           document.querySelector('#spinner').style.display = 'none';
         });
+
+        var MyElement = Polymer.Class({
+
+          is: 'my-element',
+
+          // See below for lifecycle callbacks
+          created: function() {
+            this.innerHTML = 'My element!';
+          }
+
+        });
+        document.registerElement('my-element', MyElement);
+
+
+        MyInput = Polymer({
+          is: 'my-input',
+          extends: 'my-element',
+          created: function() {
+            this.innerHTML = 'My element!';
+          }
+
+          
+        });
+
+        var el1 = new MyInput();
+
+
+        var el1 = new MyElement();
+        console.log(el1 instanceof HTMLInputElement); // true
+        // Equivalent:
+        var el2 = document.createElement('my-element');
       </script>
   </body>
 </html>

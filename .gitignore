@@ -2,3 +2,4 @@
 bin/
 parts/
 www/bower_components/
+.bower
