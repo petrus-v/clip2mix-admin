@@ -23,6 +23,7 @@
     "web-component-tester": "Polymer/web-component-tester#master"
   },
   "resolutions": {
-    "polymer": "master"
+    "polymer": "master",
+    "webcomponentsjs": "master"
   }
 }
