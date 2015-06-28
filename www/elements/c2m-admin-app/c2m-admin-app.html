@@ -1,4 +1,6 @@
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/av-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/social-icons.html">
 
 <link rel="import" href="../../bower_components/paper-drawer-panel/paper-drawer-panel.html">
 <link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
@@ -7,6 +9,7 @@
 <link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
 
+<script src="../../bower_components/page/page.js"></script>
 <!--
 Left Nav + List + Detail
  -->
@@ -16,10 +19,36 @@ Left Nav + List + Detail
 
   <template>
     <paper-drawer-panel id="navDrawerPanel" responsive-width="1280px">
-      <div class="nav" drawer>
-        <!-- Nav Content -->
-        Hello nav bar!
-      </div>
+      <paper-header-panel drawer mode="seam">
+
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span class="paper-font-title">Menu</span>
+        </paper-toolbar>
+
+        <!-- Drawer Content -->
+        <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
+          <a data-route="home" href="/">
+            <iron-icon icon="home"></iron-icon>
+            <span>Home</span>
+          </a>
+
+          <a data-route="clips" href="/clips">
+            <iron-icon icon="av:video-library"></iron-icon>
+            <span>Clips</span>
+          </a>
+
+          <a data-route="bands" href="/bands">
+            <iron-icon icon="social:people"></iron-icon>
+            <span>Bands</span>
+          </a>
+
+          <a data-route="tags" href="/bands">
+            <iron-icon icon="description"></iron-icon>
+            <span>Tags</span>
+          </a>
+        </paper-menu>
+      </paper-header-panel>
       <paper-drawer-panel
           id="mainDrawerPanel"
           class="main-drawer-panel"
@@ -60,6 +89,12 @@ Left Nav + List + Detail
   <script>
     Polymer({
       is: 'c2m-admin-app',
+
+      route: {
+        type: String,
+        value: "home"
+      },
+
       _computeListWidth: function(isMobile) {
         // when in mobile screen size, make the list be 100% width to cover
         // the whole screen
@@ -67,6 +102,39 @@ Left Nav + List + Detail
       },
       _listTap: function() {
         this.$.mainDrawerPanel.closeDrawer();
+      },
+      ready: function() {
+        // We use Page.js for routing. This is a Micro
+        // client-side router inspired by the Express router
+        // More info: https://visionmedia.github.io/page.js/
+        page('/', function () {
+          this.route = 'home';
+        });
+        page('/clips', function () {
+          this.route = 'clips';
+        });
+        page('/clips/:name', function (data) {
+          this.route = 'clip-info';
+          this.params = data.params;
+        });
+        page('/bands', function () {
+          this.route = 'bands';
+        });
+        page('/bands/:name', function (data) {
+          this.route = 'band-info';
+          this.params = data.params;
+        });
+        page('/tags', function () {
+          this.route = 'bands';
+        });
+        page('/tags/:name', function (data) {
+          this.route = 'tag-info';
+          this.params = data.params;
+        });
+        // add #! before urls
+        page({
+          hashbang: true
+        });
       }
     });
   </script>

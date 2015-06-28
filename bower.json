@@ -17,19 +17,26 @@
   "dependencies": {
     "polymer": "Polymer/polymer#master",
     "webcomponentsjs": "webcomponents/webcomponentsjs#master",
+    "iron-component-page": "PolymerElements/iron-component-page#master",
     "iron-icons": "PolymerElements/iron-icons#master",
     "paper-drawer-panel": "PolymerElements/paper-drawer-panel#master",
     "paper-header-panel": "PolymerElements/paper-header-panel#master",
     "paper-icon-button": "PolymerElements/paper-icon-button#master",
     "paper-item": "PolymerElements/paper-item#master",
     "paper-menu": "PolymerElements/paper-menu#master",
-    "paper-toolbar": "PolymerElements/paper-toolbar#master"
+    "paper-toolbar": "PolymerElements/paper-toolbar#master",
+    "paper-styles": "PolymerElements/paper-styles#master",
+    "page": "visionmedia/page.js#master"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#master"
   },
   "resolutions": {
     "polymer": "master",
-    "webcomponentsjs": "master"
+    "webcomponentsjs": "master",
+    "paper-toolbar": "master",
+    "paper-header-panel": "master",
+    "paper-styles": "master",
+    "iron-icons": "master"
   }
 }
