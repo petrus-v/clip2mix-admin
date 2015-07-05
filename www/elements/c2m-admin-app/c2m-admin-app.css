@@ -30,41 +30,12 @@ paper-menu a {
   padding: 0 16px;
 }
 
-/*
-.nav {
-  border-right: 1px solid #ccc;
-  background-color: #5EB08F;
-}
-
-.list-panel {
-  background-color: #3B9772;
-}
-
 .list-panel {
   --paper-header-panel-standard-container: {
     border-right: 1px solid #ccc;
   };
 }
 
-paper-toolbar {
-  background-color: #0F6945;
-}
-
-.list {
-  padding: 0;
-}
-
-.list paper-item {
-  height: 80px;
-  border-bottom: 1px solid #dedede;
-  background-color: #3B9772;
-}
-
 .main-drawer-panel:not([narrow]) [list-toggle] {
   display: none;
 }
-
-.content {
-  background-color: #5EB08F;
-  height: 3000px;
-}*/
