@@ -1,5 +1,5 @@
 module.exports = {
-  suites: ['./www/elements/apps-main/test/',
+  suites: ['./www/elements/c2m-admin-app/test/',
            './www/elements/c2m-video-playlist/test/'],
   sauce: {
     browsers: [
