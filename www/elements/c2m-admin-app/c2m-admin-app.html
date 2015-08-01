@@ -70,7 +70,13 @@ Left Nav + List + Detail
               on-iron-activate="_listTap"
               class="list">
             <section data-route="home">
-              <p>here you are!<p>
+              <paper-menu attr-for-selected="data-routeid" selected="{{routeId}}"
+                          class="list">
+                <a data-routeid="playlist1" href="/home/playlist1"><span>Playlist 1</span></a>
+                <a data-routeid="playlist2" href="/home/playlist2"><span>Playlist 2</span></a>
+                <a data-routeid="playlist3" href="/home/playlist3"><span>Playlist 3</span></a>
+                <a data-routeid="playlist4" href="/home/playlist4"><span>Playlist 4</span></a>
+              </paper-menu>
             </section>
 
             <section data-route="clips">
@@ -174,7 +180,12 @@ Left Nav + List + Detail
         page('/', function (data) {
           self.setRoute('home', data);
         });
-
+        page('/home', function (data) {
+          self.setRoute('home', data);
+        });
+        page('/home/:name', function (data) {
+          self.setRoute('home', data);
+        });
         page('/clips', function (data) {
           self.setRoute('clips', data);
         });
