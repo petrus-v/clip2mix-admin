@@ -76,10 +76,10 @@ Left Nav + List + Detail
 
             <section data-route="clips">
               <paper-menu>
-                <paper-item>clip 1</paper-item>
-                <paper-item>clip 2</paper-item>
-                <paper-item>clip 3</paper-item>
-                <paper-item>clip 4</paper-item>
+                <a href="/clips/clip1"><paper-item>clip 1</paper-item></a>
+                <a href="/clips/clip2"><paper-item>clip 2</paper-item></a>
+                <a href="/clips/clip3"><paper-item>clip 3</paper-item></a>
+                <a href="/clips/clip4"><paper-item>clip 4</paper-item></a>
               </paper-menu>
             </section>
 
@@ -115,7 +115,7 @@ Left Nav + List + Detail
             </section>
 
             <section data-route="clips">
-              Choose or create a Clip
+              Choose or create a Clip <span>{{params.name}}</span>
             </section>
 
             <section data-route="bands">
@@ -124,18 +124,6 @@ Left Nav + List + Detail
 
             <section data-route="tags">
               Choose or create a new tag
-            </section>
-
-            <section data-route="clip-info">
-              Clip info
-            </section>
-
-            <section data-route="band-info">
-              Band info
-            </section>
-
-            <section data-route="tag-info">
-              Tag info
             </section>
           </iron-pages>
         </paper-header-panel>
@@ -148,10 +136,26 @@ Left Nav + List + Detail
     Polymer({
       is: 'c2m-admin-app',
 
-      route: {
-        type: String,
-        value: "home"
+      properties: {
+        route: {
+          type: String,
+          notify: true,
+          value: "home"
+        },
+
+        params: {
+          type: Object,
+          notify: true
+        }
       },
+
+      observers: [
+         'paramsNameChanged(params.name)'
+       ],
+
+       paramsNameChanged: function(params) {
+         console.log('new name is ' + name);
+       },
 
       _computeListWidth: function(isMobile) {
         // when in mobile screen size, make the list be 100% width to cover
@@ -172,7 +176,7 @@ Left Nav + List + Detail
           this.route = 'clips';
         });
         page('/clips/:name', function (data) {
-          this.route = 'clip-info';
+          this.route = 'clips';
           this.params = data.params;
         });
         page('/bands', function () {
