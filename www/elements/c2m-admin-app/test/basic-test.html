@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-        <script src="../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <script src="../../../bower_components/webcomponentsjs/webcomponents.js"></script>
         <script src="../../../bower_components/web-component-tester/browser.js"></script>
         <!-- Step 1: import the element to test -->
         <link rel="import" href="../c2m-admin-app.html">
@@ -12,30 +12,30 @@
         <!-- You can use the document as a place to set up your fixtures. -->
         <c2m-admin-app id="app1"></c2m-admin-app>
         <script>
-            var app1 = document.querySelector('#app1');
-            suite('<c2m-admin-app>', function() {
-                test('defaults properties', function() {
-                  assert.equal(app1.mainRoute, 'home');
-                  assert.equal(app1.routeId, '');
-                });
+            var app1 = document.querySelector('c2m-admin-app');
 
-                test('setRoute', function(){
-                  app1.setRoute('clips', null);
-                  assert.equal(app1.mainRoute, 'clips');
-                  assert.equal(app1.routeId, '');
-                  app1.setRoute('clips');
-                  assert.equal(app1.mainRoute, 'clips');
-                  assert.equal(app1.routeId, '');
-                  app1.setRoute('clips', {params: null});
-                  assert.equal(app1.mainRoute, 'clips');
-                  assert.equal(app1.routeId, '');
-                  app1.setRoute('clips', {params: {}});
-                  assert.equal(app1.mainRoute, 'clips');
-                  assert.equal(app1.routeId, '');
-                  app1.setRoute('clips', {params: {name: 'clip1'}});
-                  assert.equal(app1.mainRoute, 'clips');
-                  assert.equal(app1.routeId, 'clip1');
-                });
+            suite('<c2m-admin-app>', function() {
+              test('defaults properties', function() {
+                assert.equal(app1.mainRoute, 'home');
+                assert.equal(app1.routeId, '');
+              });
+              test('setRoute', function(){
+                app1.setRoute('clips', null);
+                assert.equal(app1.mainRoute, 'clips');
+                assert.equal(app1.routeId, '');
+                app1.setRoute('clips');
+                assert.equal(app1.mainRoute, 'clips');
+                assert.equal(app1.routeId, '');
+                app1.setRoute('clips', {params: null});
+                assert.equal(app1.mainRoute, 'clips');
+                assert.equal(app1.routeId, '');
+                app1.setRoute('clips', {params: {}});
+                assert.equal(app1.mainRoute, 'clips');
+                assert.equal(app1.routeId, '');
+                app1.setRoute('clips', {params: {name: 'clip1'}});
+                assert.equal(app1.mainRoute, 'clips');
+                assert.equal(app1.routeId, 'clip1');
+              });
             });
         </script>
     </body>

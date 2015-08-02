@@ -207,6 +207,9 @@ Left Nav + List + Detail
         page('/tags/:name', function (data) {
           self.setRoute('tags', data);
         });
+        page('*', function(data){
+          self.setRoute('home', data);
+        });
         // add #! before urls
         page({
           hashbang: true
