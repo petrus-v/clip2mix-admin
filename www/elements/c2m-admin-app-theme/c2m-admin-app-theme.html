@@ -7,7 +7,7 @@
    See https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details
    for further information on custom CSS properties.
 
-   Sample palette: MaterialPalette.com and 
+   Sample palette: MaterialPalette.com and
    */
 
   /* Application theme */
@@ -33,7 +33,15 @@
 
     /* paper-menu */
     --paper-menu-background-color: var(--light-primary-color);
-    --menu-link-color: #111111;
+    --paper-menu-color: var(--primary-text-color);
+    --paper-menu-disabled-color: var(--disabled-text-color);
+    /*--paper-menu:	{
+      background-color: red;
+    }*/
+    --paper-menu-selected-item: { background-color: var(--accent-color);}
+    --paper-menu-focused-item:	var(--dark-primary-color);
+    --paper-menu-focused-item-after: var(--disabled-text-color);
+    --menu-link-color: var(--primary-text-color);
   }
 
   /* Breakpoints */
