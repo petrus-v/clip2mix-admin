@@ -8,7 +8,7 @@ paper-menu iron-icon {
   opacity: 0.54;
 }
 
-paper-menu a, paper-menu c2m-menu-item {
+paper-menu div, paper-menu c2m-menu-item {
   text-decoration: none;
   color: var(--menu-link-color);
   display: -ms-flexbox;

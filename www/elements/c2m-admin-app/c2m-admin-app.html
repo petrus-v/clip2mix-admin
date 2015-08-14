@@ -11,7 +11,6 @@
 
 <link rel="import" href="../c2m-menu-item/c2m-menu-item.html">
 
-<script src="../../bower_components/page/page.js"></script>
 <!--
 Left Nav + List + Detail
  -->
@@ -29,24 +28,24 @@ Left Nav + List + Detail
         </paper-toolbar>
 
         <!-- Drawer Content -->
-        <paper-menu class="list" attr-for-selected="data-route"
+        <paper-menu class="list" attr-for-selected="route"
             selected="{{mainRoute}}" on-iron-select="onMenuSelect">
-          <a data-route="home" href="/">
+          <div route="home">
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
-          </a>
-          <a data-route="clips" href="/clips">
+          </div>
+          <div route="clips">
             <iron-icon icon="av:video-library"></iron-icon>
             <span>Clips</span>
-          </a>
-          <a data-route="bands" href="/bands">
+          </div>
+          <div route="bands">
             <iron-icon icon="social:people"></iron-icon>
             <span>Bands</span>
-          </a>
-          <a data-route="tags" href="/tags">
+          </div>
+          <div route="tags">
             <iron-icon icon="description"></iron-icon>
             <span>Tags</span>
-          </a>
+          </div>
         </paper-menu>
       </paper-header-panel>
       <paper-drawer-panel
@@ -65,51 +64,52 @@ Left Nav + List + Detail
           </paper-toolbar>
 
           <!-- List -->
-          <iron-pages attr-for-selected="data-route" selected="{{mainRoute}}"
+          <iron-pages attr-for-selected="route" selected="{{mainRoute}}"
               on-iron-activate="_listTap"
               class="list">
-            <section data-route="home">
-              <paper-menu attr-for-selected="data-routeid" selected="{{routeId}}"
+            <section route="home">
+              <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
-                <a data-routeid="playlist1" href="/home/playlist1"><span>Playlist 1</span></a>
-                <a data-routeid="playlist2" href="/home/playlist2"><span>Playlist 2</span></a>
-                <a data-routeid="playlist3" href="/home/playlist3"><span>Playlist 3</span></a>
-                <a data-routeid="playlist4" href="/home/playlist4"><span>Playlist 4</span></a>
+                <div routeid="playlist1"><span>Playlist 1</span></div>
+                <div routeid="playlist2"><span>Playlist 2</span></div>
+                <div routeid="playlist3"><span>Playlist 3</span></div>
+                <div routeid="playlist4"><span>Playlist 4</span></div>
               </paper-menu>
             </section>
 
-            <section data-route="clips">
-              <paper-menu attr-for-selected="data-routeid" selected="{{routeId}}"
+            <section route="clips">
+              <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
                 <template is="dom-repeat" items="{{clips}}">
-                  <c2m-menu-item data-routeid="{{item.id}}"
-                                 id="{{item.id}}" name="{{item.name}}">
-                  </c2m-menu-item>
+                  <div routeid="{{item.id}}"><span>{{item.name}}</span></div>
                 </template>
+                  <!--<c2m-menu-item routeid="{{item.id}}"
+                                 id="{{item.id}}" name="{{item.name}}">
+                  </c2m-menu-item>-->
 
-                <a data-routeid="clip1" href="/clips/clip1"><span>clip 1</span></a>
-                <a data-routeid="clip2" href="/clips/clip2"><span>clip 2</span></a>
-                <a data-routeid="clip3" href="/clips/clip3"><span>clip 3</span></a>
-                <a data-routeid="clip4" href="/clips/clip4"><span>clip 4</span></a>
+                <div routeid="clip1"><span>clip 1</span></div>
+                <div routeid="clip2"><span>clip 2</span></div>
+                <div routeid="clip3"><span>clip 3</span></div>
+                <div routeid="clip4"><span>clip 4</span></div>
               </paper-menu>
             </section>
 
-            <section data-route="bands">
-              <paper-menu attr-for-selected="data-routeid" selected="{{routeId}}"
+            <section route="bands">
+              <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
-                <a data-routeid="band1" href="/bands/band1"><span>band 1</span></a>
-                <a data-routeid="band2" href="/bands/band2"><span>band 2</span></a>
-                <a data-routeid="band3" href="/bands/band3"><span>band 3</span></a>
-                <a data-routeid="band4" href="/bands/band4"><span>band 4</span></a>
+                <div routeid="band1"><span>band 1</span></div>
+                <div routeid="band2"><span>band 2</span></div>
+                <div routeid="band3"><span>band 3</span></div>
+                <div routeid="band4"><span>band 4</span></div>
               </paper-menu>
             </section>
 
-            <section data-route="tags">
-              <paper-menu attr-for-selected="data-routeid" selected="{{routeId}}"
+            <section route="tags">
+              <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
-                <a data-routeid="tag1" href="/tags/tag1"><span>tag 1</span></a>
-                <a data-routeid="tag2" href="/tags/tag2"><span>tag 2</span></a>
-                <a data-routeid="tag3" href="/tags/tag3"><span>tag 3</span></a>
+                <div routeid="tag1"><span>tag 1</span></div>
+                <div routeid="tag2"><span>tag 2</span></div>
+                <div routeid="tag3"><span>tag 3</span></div>
               </paper-menu>
             </section>
           </iron-pages>
@@ -122,22 +122,22 @@ Left Nav + List + Detail
             </paper-icon-button>
           </paper-toolbar>
           <!-- Main Content -->
-          <iron-pages attr-for-selected="data-route" selected="{{mainRoute}}">
-            <section data-route="home">
+          <iron-pages attr-for-selected="route" selected="{{mainRoute}}">
+            <section route="home">
               Home main screen
             </section>
 
-            <section data-route="clips">
+            <section route="clips">
               Choose or create a Clip<br/>
               <span>{{routeId}}</span>
             </section>
 
-            <section data-route="bands">
+            <section route="bands">
               Choose or create a band<br/>
               <span>{{routeId}}</span>
             </section>
 
-            <section data-route="tags">
+            <section route="tags">
               Choose or create a new tag<br/>
               <span>{{routeId}}</span>
             </section>
@@ -186,60 +186,8 @@ Left Nav + List + Detail
       _listTap: function() {
         this.$.mainDrawerPanel.closeDrawer();
       },
-      ready: function() {
-        // We use Page.js for routing. This is a Micro
-        // client-side router inspired by the Express router
-        // More info: https://visionmedia.github.io/page.js/
-        var self = this;
-        page('/', function (data) {
-          self.setRoute('home', data);
-        });
-        page('/home', function (data) {
-          self.setRoute('home', data);
-        });
-        page('/home/:name', function (data) {
-          self.setRoute('home', data);
-        });
-        page('/clips', function (data) {
-          self.setRoute('clips', data);
-        });
-        page('/clips/:name', function (data) {
-          self.setRoute('clips', data);
-        });
 
-        page('/bands', function (data) {
-          self.setRoute('bands', data);
-        });
-        page('/bands/:name', function (data) {
-          self.setRoute('bands', data);
-        });
-
-        page('/tags', function (data) {
-          self.setRoute('tags', data);
-        });
-        page('/tags/:name', function (data) {
-          self.setRoute('tags', data);
-        });
-        page('*', function(data){
-          self.setRoute('home', data);
-        });
-        // add #! before urls
-        page({
-          hashbang: true,
-        });
-      },
-
-      setRoute: function(route, data){
-        this.mainRoute = route;
-        if(data && data.params && data.params.name){
-          this.routeId = data.params.name;
-        } else {
-          this.routeId = '';
-        }
-      },
-
-      onMenuSelect: function() {
-        //menu selected
+      onMenuSelect: function(data) {
       },
 
     });

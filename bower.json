@@ -27,7 +27,6 @@
     "paper-menu": "PolymerElements/paper-menu#master",
     "paper-toolbar": "PolymerElements/paper-toolbar#master",
     "paper-styles": "PolymerElements/paper-styles#master",
-    "page": "visionmedia/page.js#master"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#master"
