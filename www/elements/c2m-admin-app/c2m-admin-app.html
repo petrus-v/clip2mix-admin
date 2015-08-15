@@ -6,10 +6,10 @@
 <link rel="import" href="../../bower_components/paper-drawer-panel/paper-drawer-panel.html">
 <link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item-body.html">
 <link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
-
-<link rel="import" href="../c2m-menu-item/c2m-menu-item.html">
 
 <!--
 Left Nav + List + Detail
@@ -30,22 +30,22 @@ Left Nav + List + Detail
         <!-- Drawer Content -->
         <paper-menu class="list" attr-for-selected="route"
             selected="{{mainRoute}}" on-iron-select="onMenuSelect">
-          <div route="home">
+          <paper-item route="home" role="menuitem">
             <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
-          </div>
-          <div route="clips">
+            <paper-item-body>Home</paper-item-body>
+          </paper-item>
+          <paper-item route="clips" role="menuitem">
             <iron-icon icon="av:video-library"></iron-icon>
-            <span>Clips</span>
-          </div>
-          <div route="bands">
+            <paper-item-body>Clips</paper-item-body>
+          </paper-item>
+          <paper-item route="bands" role="menuitem">
             <iron-icon icon="social:people"></iron-icon>
-            <span>Bands</span>
-          </div>
-          <div route="tags">
+            <paper-item-body>Bands</paper-item-body>
+          </paper-item>
+          <paper-item route="tags" role="menuitem">
             <iron-icon icon="description"></iron-icon>
-            <span>Tags</span>
-          </div>
+            <paper-item-body>Tags</paper-item-body>
+          </paper-item>
         </paper-menu>
       </paper-header-panel>
       <paper-drawer-panel
@@ -70,10 +70,18 @@ Left Nav + List + Detail
             <section route="home">
               <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
-                <div routeid="playlist1"><span>Playlist 1</span></div>
-                <div routeid="playlist2"><span>Playlist 2</span></div>
-                <div routeid="playlist3"><span>Playlist 3</span></div>
-                <div routeid="playlist4"><span>Playlist 4</span></div>
+                <paper-item routeid="playlist1" role="menuitem">
+                  <paper-item-body>Playlist 1</paper-item-body>
+                </paper-item>
+                <paper-item routeid="playlist2" role="menuitem">
+                  <paper-item-body>Playlist 2</paper-item-body>
+                </paper-item>
+                <paper-item routeid="playlist3" role="menuitem">
+                  <paper-item-body>Playlist 3</paper-item-body>
+                </paper-item>
+                <paper-item routeid="playlist4" role="menuitem">
+                  <paper-item-body>Playlist 4</paper-item-body>
+                </paper-item>
               </paper-menu>
             </section>
 
@@ -81,35 +89,43 @@ Left Nav + List + Detail
               <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
                 <template is="dom-repeat" items="{{clips}}">
-                  <div routeid="{{item.id}}"><span>{{item.name}}</span></div>
+                  <paper-item routeid="{{item.id}}" role="menuitem">
+                    <paper-item-body>{{item.name}}</paper-item-body>
+                  </paper-item>
                 </template>
-                  <!--<c2m-menu-item routeid="{{item.id}}"
-                                 id="{{item.id}}" name="{{item.name}}">
-                  </c2m-menu-item>-->
-
-                <div routeid="clip1"><span>clip 1</span></div>
-                <div routeid="clip2"><span>clip 2</span></div>
-                <div routeid="clip3"><span>clip 3</span></div>
-                <div routeid="clip4"><span>clip 4</span></div>
               </paper-menu>
             </section>
 
             <section route="bands">
               <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
-                <div routeid="band1"><span>band 1</span></div>
-                <div routeid="band2"><span>band 2</span></div>
-                <div routeid="band3"><span>band 3</span></div>
-                <div routeid="band4"><span>band 4</span></div>
+                <paper-item routeid="band1" role="menuitem">
+                  <paper-item-body>band 1</paper-item-body>
+                </paper-item>
+                <paper-item routeid="band2" role="menuitem">
+                  <paper-item-body>band 2</paper-item-body>
+                </paper-item>
+                <paper-item routeid="band3" role="menuitem">
+                  <paper-item-body>band 3</paper-item-body>
+                </paper-item>
+                <paper-item routeid="band4" role="menuitem">
+                  <paper-item-body>band 4</paper-item-body>
+                </paper-item>
               </paper-menu>
             </section>
 
             <section route="tags">
               <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
-                <div routeid="tag1"><span>tag 1</span></div>
-                <div routeid="tag2"><span>tag 2</span></div>
-                <div routeid="tag3"><span>tag 3</span></div>
+                <paper-item routeid="tag1">
+                  <paper-item-body>tag 1</paper-item-body>
+                </paper-item>
+                <paper-item routeid="tag2">
+                  <paper-item-body>tag 2</paper-item-body>
+                </paper-item>
+                <paper-item routeid="tag3">
+                  <paper-item-body>tag 3</paper-item-body>
+                </paper-item>
               </paper-menu>
             </section>
           </iron-pages>
@@ -192,5 +208,4 @@ Left Nav + List + Detail
 
     });
   </script>
-
 </dom-module>

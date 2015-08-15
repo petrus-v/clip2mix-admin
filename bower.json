@@ -17,6 +17,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#master",
     "webcomponentsjs": "webcomponents/webcomponentsjs#master",
+    "iron-selector": "petrus-v/iron-selector#master+vsimonian_patch-2",
     "iron-component-page": "PolymerElements/iron-component-page#master",
     "iron-icons": "PolymerElements/iron-icons#master",
     "iron-pages": "PolymerElements/iron-pages#master",
@@ -26,7 +27,7 @@
     "paper-item": "PolymerElements/paper-item#master",
     "paper-menu": "PolymerElements/paper-menu#master",
     "paper-toolbar": "PolymerElements/paper-toolbar#master",
-    "paper-styles": "PolymerElements/paper-styles#master",
+    "paper-styles": "PolymerElements/paper-styles#master"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#master"
