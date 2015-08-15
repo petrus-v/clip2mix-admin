@@ -38,6 +38,7 @@
     "paper-toolbar": "master",
     "paper-header-panel": "master",
     "paper-styles": "master",
-    "iron-icons": "master"
+    "iron-icons": "master",
+    "iron-selector": "master+vsimonian_patch-2"
   }
 }
