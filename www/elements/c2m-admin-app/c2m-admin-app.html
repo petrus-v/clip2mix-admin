@@ -46,6 +46,11 @@ Left Nav + List + Detail
             <iron-icon icon="description"></iron-icon>
             <paper-item-body>Tags</paper-item-body>
           </paper-item>
+          </paper-item>
+          <paper-item route="countries" role="menuitem">
+            <iron-icon icon="social:public"></iron-icon>
+            <paper-item-body>Countries</paper-item-body>
+          </paper-item>
         </paper-menu>
       </paper-header-panel>
       <paper-drawer-panel
@@ -99,33 +104,34 @@ Left Nav + List + Detail
             <section route="bands">
               <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
-                <paper-item routeid="band1" role="menuitem">
-                  <paper-item-body>band 1</paper-item-body>
-                </paper-item>
-                <paper-item routeid="band2" role="menuitem">
-                  <paper-item-body>band 2</paper-item-body>
-                </paper-item>
-                <paper-item routeid="band3" role="menuitem">
-                  <paper-item-body>band 3</paper-item-body>
-                </paper-item>
-                <paper-item routeid="band4" role="menuitem">
-                  <paper-item-body>band 4</paper-item-body>
-                </paper-item>
+                <template is="dom-repeat" items="{{bands}}">
+                  <paper-item routeid="{{item.id}}" role="menuitem">
+                    <paper-item-body>{{item.name}}</paper-item-body>
+                  </paper-item>
+                </template>
               </paper-menu>
             </section>
 
             <section route="tags">
               <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
                           class="list">
-                <paper-item routeid="tag1">
-                  <paper-item-body>tag 1</paper-item-body>
-                </paper-item>
-                <paper-item routeid="tag2">
-                  <paper-item-body>tag 2</paper-item-body>
-                </paper-item>
-                <paper-item routeid="tag3">
-                  <paper-item-body>tag 3</paper-item-body>
-                </paper-item>
+                <template is="dom-repeat" items="{{tags}}">
+                  <paper-item routeid="{{item.id}}" role="menuitem">
+                    <paper-item-body>{{item.name}}</paper-item-body>
+                  </paper-item>
+                </template>
+              </paper-menu>
+            </section>
+            </section>
+
+            <section route="countries">
+              <paper-menu attr-for-selected="routeid" selected="{{routeId}}"
+                          class="list">
+                <template is="dom-repeat" items="{{countries}}">
+                  <paper-item routeid="{{item.id}}" role="menuitem">
+                    <paper-item-body>{{item.name}}</paper-item-body>
+                  </paper-item>
+                </template>
               </paper-menu>
             </section>
           </iron-pages>
@@ -155,6 +161,12 @@ Left Nav + List + Detail
 
             <section route="tags">
               Choose or create a new tag<br/>
+              <span>{{routeId}}</span>
+            </section>
+            </section>
+
+            <section route="countries">
+              Choose or create a new contry<br/>
               <span>{{routeId}}</span>
             </section>
           </iron-pages>
@@ -190,6 +202,30 @@ Left Nav + List + Detail
             return [{id: 'wind', name: "Wind"},
                     {id: 'soon-we-ll-be-found', name: "Soon We'll Be Found"},
                     {id: 'kick-in-the-bucket', name: "Kick in the bucket"},]
+          }
+        },
+        bands: {
+          type: Array,
+          value: function(){
+            return [{id: 'akeboshi', name: "Akeboshi"},
+                    {id: 'sia', name: "Sia"},
+                    {id: 'charlie-winston', name: "Charlie Winston"},]
+          }
+        },
+        tags: {
+          type: Array,
+          value: function(){
+            return [{id: 'jazz', name: "Jazz"},
+                    {id: 'rock', name: "Rock"},
+                    {id: 'pop', name: "Pop"},]
+          }
+        },
+        countries: {
+          type: Array,
+          value: function(){
+            return [{id: 'fr', name: "France"},
+                    {id: 'us', name: "Unated-States"},
+                    {id: 'pt', name: "Portugal"},]
           }
         }
       },
